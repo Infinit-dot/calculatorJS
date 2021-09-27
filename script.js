@@ -19,8 +19,8 @@ keys.addEventListener("click", (event) => {
     }
   }
 
-  if (type === "operator") {
-    const operatorKeys = keys.querySelectorAll('[data-type="operator"]');
+  if (type === "operator" || type === "decimal" ) {
+    const operatorKeys = keys.querySelectorAll('[data-type="operator"] [data-type="decimal"]');
     operatorKeys.forEach((el) => {
       el.dataset.state = "";
     });
@@ -35,24 +35,33 @@ keys.addEventListener("click", (event) => {
     const firstNumber = calculator.dataset.firstNumber;
     const operator = calculator.dataset.operator;
     const secondNumber = displayValue;
-    display.textContent = calculate(firstNumber, operator, secondNumber);
+    const total = calculate(firstNumber, operator, secondNumber)
+      display.textContent = total;
+
   }
-  if (type === 'clear') {
-    display.textContent = '0'
-    delete calculator.dataset.firstNumber
-    delete calculator.dataset.operator
+  if (type === "decimal") {
+    if (!displayValue.includes('.')) {
+        display.textContent = displayValue + '.'
+      } else if (previousKeyType === 'operator') {
+        display.textContent = '0.'
+      }
+  }
+
+  if (type === "clear") {
+    display.textContent = "0";
+    delete calculator.dataset.firstNumber;
+    delete calculator.dataset.operator;
   }
 
   calculator.dataset.previousKeyType = type;
 });
 
 function calculate(firstNumber, operator, secondNumber) {
-  firstNumber = parseInt(firstNumber);
-  secondNumber = parseInt(secondNumber);
+  firstNumber = parseFloat(firstNumber);
+  secondNumber = parseFloat(secondNumber);
 
   if (operator === "plus") return firstNumber + secondNumber;
   if (operator === "minus") return firstNumber - secondNumber;
   if (operator === "times") return firstNumber * secondNumber;
   if (operator === "divide") return firstNumber / secondNumber;
 }
-

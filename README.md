@@ -9,8 +9,8 @@
 ## To Do
 
 - [ ] Add button with possibility to delete only previous number, operation
-- [ ] Ignore a . if the next number already has one
+- [X] Ignore a . if the next number already has one
 - [ ] Add additional operations (%, square root)
-- [ ] Handle division by zer0
+- [ ] Handle division by zero
 - [ ] Handle negative numbers
 - [ ] Handle long numbers

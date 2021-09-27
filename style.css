@@ -107,11 +107,15 @@ button{
   background: rgb(202, 200, 200);
 }
 [data-type="operator"]:active,
-[data-type="number"]:active
+[data-type="number"]:active,
+[data-type="decimal"]:active,
+[data-type="clear"]:active
 {
   background-color: rgb(179, 173, 173);;
 }
 
-[data-type="number"] {
+[data-type="number"],
+[data-type="decimal"],
+[data-type="clear"] {
   background: white;
 }
