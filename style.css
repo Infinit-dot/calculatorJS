@@ -103,15 +103,15 @@ button{
 .equal:active {
   background-color: rgb(8, 109, 104);
 }
-.operator {
+[data-type="operator"] {
   background: rgb(202, 200, 200);
 }
-.operator:active,
-.number:active
+[data-type="operator"]:active,
+[data-type="number"]:active
 {
   background-color: rgb(179, 173, 173);;
 }
 
-.number {
+[data-type="number"] {
   background: white;
 }
