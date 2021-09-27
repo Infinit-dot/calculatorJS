@@ -2,10 +2,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Verdana, sans-serif;
-  font-weight: normal;
 }
 
+html {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
 body {
   display: flex;
   justify-content: center;
@@ -20,9 +23,95 @@ body {
     rgb(87, 196, 158) 100%
   );
 }
+button{
+  font-family: Verdana, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.calculator {
+  box-shadow: -7px 14px 17px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -7px 14px 17px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -7px 14px 17px -7px rgba(0, 0, 0, 0.75);
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.calculator__display {
+  background-color: rgb(56, 56, 56);
+  color: whitesmoke;
+  width: 14em;
+  padding: 1rem 1.5rem;
+  text-align: right;
+  font-size: calc(1rem * 1.2 * 1.2 *1.2);
+}
+.calculator__keys > button{
+ border: 0;
+ padding: 1.5em;
+}
+.calculator__keys {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-areas:
+    ". . . ."
+    "seven eight nine equal"
+    "four five six equal"
+    "one two three equal"
+    "zero decimal clear equal";
+    background:rgb(138, 137, 137);
+}
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.nine {
+  grid-area: nine;
+}
+.zero {
+  grid-area: zero;
+}
+.decimal {
+  grid-area: decimal;
+}
+.clear {
+  grid-area: clear;
+}
+.equal {
+  grid-area: equal;
+  background-color:rgb(9, 124, 118);
+}
 
-.calculator{
-    box-shadow: -7px 14px 17px -7px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: -7px 14px 17px -7px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -7px 14px 17px -7px rgba(0, 0, 0, 0.75);
+.equal:active {
+  background-color: rgb(8, 109, 104);
+}
+.operator {
+  background: rgb(202, 200, 200);
+}
+.operator:active,
+.number:active
+{
+  background-color: rgb(179, 173, 173);;
+}
+
+.number {
+  background: white;
 }
